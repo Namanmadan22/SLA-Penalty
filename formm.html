@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLA: Causes and Breaches</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #1e90ff;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 50px;
+    }
+    main {
+      margin: 2rem;
+    }
+    form {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    label, select, input, button {
+      display: block;
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+    }
+    button {
+      background: #1e90ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .breach-section {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Company Logo" class="logo">
+    <h1>Kimbal Pvt Ltd</h1>
+    <p><strong>Project-</strong> SLA: Causes and Breaches</p>
+  </header>
+  <main>
+    <form id="penaltyForm">
+      <label for="project">Select Project:</label>
+      <select id="project" name="project">
+        <option value="Techno J&K">Techno J&K</option>
+        <option value="Apraava APDCL">Apraava APDCL</option>
+        <option value="Anvil J&K">Anvil J&K</option>
+        <option value="Intelli pkg 1&2">Intelli pkg 1&2</option>
+        <option value="Purbanchal AIIB">Purbanchal AIIB</option>
+        <option value="NCC-Nashik">NCC NCC-Nashik</option>
+        <option value="NCC-Aurangabad">NCC-Aurangabad</option>
+        <option value="MCL">MCL</option>
+        <option value="Apraava HP">Apraava HP</option>
+        <option value="Intelli pkg 7">MCL</option>
+      </select>
+      <h2>Enter SLA Breaches and Causes</h2>
+      <div id="breachContainer"></div>
+      <button type="button" onclick="addBreachRow()">Add SLA Breach</button>
+      <button type="submit">Calculate and Submit Penalty</button>
+    </form>
+    <p id="result"></p>
+  </main>
+  <script src="untitled-1.js"></script>
+</body>
+</html>
