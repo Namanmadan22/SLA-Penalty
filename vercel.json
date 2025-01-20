@@ -1,8 +1,16 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/frontend/$1"
+  "projects": {
+    "frontend": {
+      "src": "./frontend",
+      "output": "/"
+    },
+    "backend": {
+      "src": "./backend",
+      "functions": "api"
     }
+  },
+  "rewrites": [
+    { "source": "/", "destination": "/frontend/formm.html" },
+    { "source": "/api/(.*)", "destination": "/backend/api/$1" }
   ]
 }
