@@ -90,16 +90,6 @@ document.getElementById('penaltyForm').addEventListener('submit', function (even
     penaltyData.push({ project, slaBreach, penaltyAmount, issues });
   });
 
-  fetch('/api/submit-penalty', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(penaltyData)
-  })
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('result').innerText = data.message;
-    })
-    .catch(err => {
-      document.getElementById('result').innerText = 'Error submitting penalty data.';
-    });
+  console.log('Penalty Data:', penaltyData);
+  document.getElementById('result').innerText = 'This is a frontend-only version. Backend is not connected.';
 });
