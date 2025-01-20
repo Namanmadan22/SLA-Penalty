@@ -1,23 +1,19 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "frontend/*",
-      "use": "@vercel/static"
+      "source": "/",
+      "destination": "/frontend/formm.html"
     },
     {
-      "src": "api/server.js",
-      "use": "@vercel/node"
+      "source": "/api/(.*)",
+      "destination": "/backend/api/$1"
     }
   ],
-  "routes": [
+  "builds": [
     {
-      "src": "/(.*)",
-      "dest": "/frontend/$1"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "src": "frontend/**",
+      "use": "@vercel/static"
     }
   ]
 }
+
