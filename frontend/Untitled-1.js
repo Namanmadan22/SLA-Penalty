@@ -90,7 +90,7 @@ document.getElementById('penaltyForm').addEventListener('submit', function (even
     penaltyData.push({ project, slaBreach, penaltyAmount, issues });
   });
 
-  fetch('http://localhost:3001/submit-penalty', {
+  fetch('/api/submit-penalty', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(penaltyData)
