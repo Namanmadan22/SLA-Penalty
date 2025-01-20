@@ -6,6 +6,7 @@ const mysql = require('mysql2');
 
 // Initialize Express app
 const app = express();
+
 // Use the environment variable for port or fallback to 3001 locally
 const port = process.env.PORT || 3001;  // Render will use the dynamic port
 
@@ -15,12 +16,12 @@ app.use(cors());
 
 // Create a connection pool for better connection handling
 const db = mysql.createPool({
-  host: 'localhost',  // In production, use the actual database host
-  user: 'root',
-  password: 'Namanmadan.22',  // Consider using environment variables for sensitive info
-  database: 'form_data',
+  host: 'localhost',  // Use localhost for local database
+  user: 'root',  // Your local MySQL username (usually 'root')
+  password: 'Namanmadan.22',  // Your local MySQL password
+  database: 'form_data',  // Your database name
   waitForConnections: true,
-  connectionLimit: 10,  // Adjust this value as needed
+  connectionLimit: 10,
   queueLimit: 0
 });
 
@@ -49,11 +50,14 @@ app.post('/submit-penalty', (req, res) => {
       db.query(sql, values, (err, result) => {
         if (err) {
           console.error('Error inserting penalty data:', err);
+          // Send a failure response if there's an error
+          res.status(500).json({ message: 'Error submitting penalty data' });
         }
       });
     });
   });
  
+  // Send a success response after processing all data
   res.json({ message: 'Penalty data submitted successfully.' });
 });
 
