@@ -1,19 +1,8 @@
 {
   "rewrites": [
-    {
-      "source": "/",
-      "destination": "/frontend/formm.html"
-    },
-    {
-      "source": "/api/(.*)",
-      "destination": "/backend/api/$1"
-    }
+    { "source": "/", "destination": "/frontend/formm.html" }
   ],
-  "builds": [
-    {
-      "src": "frontend/**",
-      "use": "@vercel/static"
-    }
-  ]
+  "functions": {
+    "api/*.js": { "runtime": "nodejs18.x" }
+  }
 }
-
