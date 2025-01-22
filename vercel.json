@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/", "destination": "/frontend/formm.html" }
-  ],
-  "functions": {
-    "api/*.js": { "runtime": "nodejs18.x" }
-  }
-}
