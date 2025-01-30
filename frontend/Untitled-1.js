@@ -58,6 +58,7 @@ function addBreachRow() {
   addIssueButton.type = 'button';
   addIssueButton.textContent = 'Add Issue';
   addIssueButton.onclick = () => {
+    console.log("Button Clicked!");
     issuesContainer.appendChild(createIssueRow());
   };
 
